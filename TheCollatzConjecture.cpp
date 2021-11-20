@@ -51,14 +51,11 @@ int main(){
   }
 
   else if (pid==0){
-printf(":");
-collatz(num);
-
-
-}
-else 
-{
-wait(&stat);
-printf("\n");
-}
-}
+    printf(":");
+    collatz(num);
+  }
+  else{
+    wait(&stat);
+    printf("\n");
+   }// end else
+}//end main
