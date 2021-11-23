@@ -6,25 +6,25 @@ using namespace std;
 int collatz(int num){
   int count=0;
   if (num<=0){
-    printf("the  < 0");
+    cout<<"the number is < 0"<<endl;
   return 0;
   }//end if 
 
 while(count!=10000){
   if (num==1){
-    printf("%i",num);
+    cout<<"%i"<<num<<endl;
     return 0;
   }// end if
   else if (num%2==0){
-    printf("%i",num);
+    cout<<num;
     num/=2;
-    printf("  ");
+    cout<<"  ";
   }// end else if
 
   else{
-    printf("%i",num);
+    cout<<num;
     num=num*3+1;
-    printf("   ");
+    cout<<"   ";
   }// end else
   count++;
 }//end while
@@ -40,15 +40,15 @@ int main(){
 
   pid=fork();
   if(pid==-1){
-    printf("child did not created");
+    cout<<"child did not created"<<endl;
   }// end if 
 
   else if (pid==0){
-    printf(":");
+    cout<<":";
     collatz(num);
   }//end else if 
   else{
     wait(&stat);
-    printf("\n");
+    cout<<endl;
    }// end else
 }//end main
